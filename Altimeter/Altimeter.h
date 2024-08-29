@@ -16,7 +16,7 @@ private:
     bool    _initialised;
     uint8_t _pin1, _pin2, _pin3;
     float altitude = 0;         // altitude value from the simulator
-    float baro = 0;             // barometric pressure value from the simulator
+    float baro = 29.92;             // barometric pressure value from the simulator
     int tenThousand = 0;        // ten thousands value
     int thousand = 0;           // thousands value
     int hundred = 0;            // hundreds value

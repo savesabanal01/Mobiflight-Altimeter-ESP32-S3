@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MobiflightConnector>
+  <outputs>
+    <config guid="b7a99708-01a4-42e2-92fa-f99a9f06dd14">
+      <active>true</active>
+      <description>Altitude</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="XplaneDataRef" path="sim/cockpit2/gauges/indicators/altitude_ft_pilot" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="0" value="$" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b3ef58b0-f6cd-4559-9230-ea8dff2c8036">
+      <active>true</active>
+      <description>Baro Value</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="XplaneDataRef" path="sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="1" value="$" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a4441ff2-c71a-4e10-b4f0-1ec2c5f6f378">
+      <active>true</active>
+      <description>Instrument Brightness</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="XplaneDataRef" path="sim/cockpit2/electrical/instrument_brightness_ratio_manual[1]" />
+        <test type="Float" value="1" />
+        <modifiers />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="2" value="$" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4e9a0185-7423-4edc-8694-51e7ff0edd81">
+      <active>true</active>
+      <description>Screen Rotation</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="Variable" varType="number" varName="ScreenRotation" varExpression="$" />
+        <test type="Float" value="1" />
+        <modifiers>
+          <transformation active="True" expression="3" />
+        </modifiers>
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="100" value="$" />
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </outputs>
+  <inputs>
+    <config guid="8b3beaa2-c38a-4aab-b823-c9be7d1d20ce">
+      <active>true</active>
+      <description>Baro Knob</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" name="Encoder" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <encoder>
+          <onLeft type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_down" expression="" />
+          <onLeftFast type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_down" expression="" />
+          <onRight type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_up" expression="" />
+          <onRightFast type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_up" expression="" />
+        </encoder>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="e383728b-4cac-4be3-8478-ccb2b0327568">
+      <active>true</active>
+      <description>Baro switch 29.92</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" name="Button" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_2992" expression="" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </inputs>
+</MobiflightConnector>

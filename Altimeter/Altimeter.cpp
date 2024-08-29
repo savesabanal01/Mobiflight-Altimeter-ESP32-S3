@@ -148,16 +148,13 @@ void Altimeter::update()
 
     if (prevBaroMode != baroMode)
     {
-        prevBaroMode = baroMode;
-        if (baroMode == 0)
-        {
-            baroSpr.pushImage(0, 0, 320, 320, baro_inhg);
-        }
-        else if (baroMode == 1)
+        if (baroMode == 1)
         {
             baroSpr.pushImage(0, 0, 320, 320, baro_hpa);
         }
         else baroSpr.pushImage(0, 0, 320, 320, baro_inhg);
+        
+        prevBaroMode = baroMode;
     }
 
     analogWrite(TFT_BL, instrumentBrightness);

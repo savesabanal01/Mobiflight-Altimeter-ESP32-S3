@@ -28,13 +28,13 @@
       },
       {
         "id": 2,
-        "label": "Show Baro Mode ",
-        "description": "0 = inHg, 1 = hpa"
+        "label": "Show Instrument Brightness Ratio",
+        "description": "$ will be displayed as Instrument Brightness Ratio"
       },
       {
         "id": 3,
-        "label": "Show Instrument Brightness Ratio",
-        "description": "$ will be displayed as Instrument Brightness Ratio"
+        "label": "Show Baro Mode ",
+        "description": "0 = inHg, 1 = hpa"
       },
       {
         "id": 100,

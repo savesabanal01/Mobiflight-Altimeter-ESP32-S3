@@ -187,14 +187,14 @@ void Altimeter::drawAll()
   if(baroMode == 1)
   {
     // Baro scale in HPA
-    angleBaro = scaleValue(baro, 970, 1050, 181, 379);
+    angleBaro = scaleValue(baro, 970, 1050, -109, 109);
   }
   else 
   {   // Baro scale in inHg
-    angleBaro = scaleValue(baro, 28.6, 31.1, 147, 384);
+    angleBaro =  angleBaro = scaleValue(baro, 28.6, 31.1, -120, 112);
   }
 
-  baroSpr.pushRotated(&mainSpr, angleBaro, TFT_BLACK);
+  baroSpr.pushRotated(&mainSpr, -angleBaro, TFT_BLACK);
   altimeterSpr.setSwapBytes(true);
   altimeterSpr.pushImage(0, 0, 320, 320, altimeter_main);
   needle10000Spr.pushRotated(&altimeterSpr, angleTenThousand, TFT_BLACK);

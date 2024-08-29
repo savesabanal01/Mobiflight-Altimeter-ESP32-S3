@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Mobiflight-Turn_Coordinator-ESP32-S3",
+			"path": "../../Mobiflight-Turn_Coordinator-ESP32-S3"
+		},
+		{
+			"name": "Mobiflight-Altimeter-ESP32-S3",
+			"path": ".."
+		},
+		{
+			"name": "Altimeter PoC",
+			"path": "../../Altimeter PoC"
+		}
+	],
+	"settings": {}
+}

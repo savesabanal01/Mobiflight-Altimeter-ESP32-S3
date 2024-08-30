@@ -143,8 +143,31 @@ void Altimeter::set(int16_t messageID, char *setPoint)
 void Altimeter::update()
 {
     // Do something which is required regulary
-  if(!powerSaveFlag)
-  {
+//   if(!powerSaveFlag)
+//   {
+
+//     if (prevBaroMode != baroMode)
+//     {
+//         if (baroMode == 1)
+//         {
+//             baroSpr.pushImage(0, 0, 320, 320, baro_hpa);
+//         }
+//         else baroSpr.pushImage(0, 0, 320, 320, baro_inhg);
+        
+//         prevBaroMode = baroMode;
+//     }
+
+//     analogWrite(TFT_BL, instrumentBrightness);
+
+//     if(prevScreenRotation != screenRotation)
+//     {
+//         tft.setRotation(screenRotation);
+//         prevScreenRotation = screenRotation;
+//     }
+//     drawAll();
+
+//    }
+//    else digitalWrite(TFT_BL, LOW);
 
     if (prevBaroMode != baroMode)
     {
@@ -166,8 +189,6 @@ void Altimeter::update()
     }
     drawAll();
 
-   }
-   else digitalWrite(TFT_BL, LOW);
 }
 
 void Altimeter::drawAll()

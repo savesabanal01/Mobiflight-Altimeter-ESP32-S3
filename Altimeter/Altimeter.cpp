@@ -289,6 +289,6 @@ void Altimeter::setPowerSave(bool enabled)
 
 void Altimeter::setScreenRotation(int rotation)
 {
-  if(rotation >= 0 || rotation <= 3)
+  if(rotation >= 0 && rotation <= 3)
     screenRotation = rotation;
 }

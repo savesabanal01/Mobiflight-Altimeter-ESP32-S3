@@ -8,7 +8,7 @@
         <source type="XplaneDataRef" path="sim/cockpit2/gauges/indicators/altitude_ft_pilot" />
         <test type="Float" value="1" />
         <modifiers />
-        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="0" value="$" />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-48CA439B5068" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="0" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -20,7 +20,7 @@
         <source type="XplaneDataRef" path="sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot" />
         <test type="Float" value="1" />
         <modifiers />
-        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="1" value="$" />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-48CA439B5068" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="1" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -44,9 +44,9 @@
         <source type="Variable" varType="number" varName="ScreenRotation" varExpression="$" />
         <test type="Float" value="1" />
         <modifiers>
-          <transformation active="True" expression="3" />
+          <transformation active="True" expression="1" />
         </modifiers>
-        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="100" value="$" />
+        <display type="CustomDevice" serial="Altimeter ESP32-S3/ SN-48CA439B5068" trigger="normal" customType="" customName="Altimeter ESP32-S3" messageType="100" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -56,7 +56,7 @@
     <config guid="8b3beaa2-c38a-4aab-b823-c9be7d1d20ce">
       <active>true</active>
       <description>Baro Knob</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" name="Encoder" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-48CA439B5068" name="Encoder" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <encoder>
           <onLeft type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_down" expression="" />
           <onLeftFast type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_down" expression="" />
@@ -70,7 +70,7 @@
     <config guid="e383728b-4cac-4be3-8478-ccb2b0327568">
       <active>true</active>
       <description>Baro switch 29.92</description>
-      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-24587CDE6C94" name="Button" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=10.3.0.0, Culture=neutral, PublicKeyToken=null" serial="Altimeter ESP32-S3/ SN-48CA439B5068" name="Button" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <button>
           <onPress type="XplaneInputAction" inputType="Command" path="sim/instruments/barometer_2992" expression="" />
         </button>

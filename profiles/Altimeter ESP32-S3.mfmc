@@ -11,5 +11,4 @@
     </ConfiguredPins>
   </CustomDevice>
   <Encoder Name="Encoder" PinLeft="10" PinRight="11" EncoderType="2" />
-  <Button Name="Button" Pin="12" />
 </Config>

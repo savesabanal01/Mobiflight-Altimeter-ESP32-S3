@@ -42,7 +42,7 @@ void Altimeter::begin()
   tft.begin();
   tft.setRotation(3);
   tft.fillScreen(PANEL_COLOR);
-  tft.setPivot(320, 160);
+//   tft.setPivot(320, 160);
   tft.setSwapBytes(true);
   tft.pushImage(160, 80, 160, 160, logo);
   delay(3000);
@@ -116,8 +116,13 @@ void Altimeter::set(int16_t messageID, char *setPoint)
     switch (messageID) {
     case -1:
         // tbd., get's called when Mobiflight shuts down
+        setPowerSave(true);
+        break;
     case -2:
         // tbd., get's called when PowerSavingMode is entered
+        data = atoi(setPoint);
+        setPowerSave((bool) atoi(setPoint));
+        break;
     case 0:
         // output = (uint16_t)data;
         // data   = output;
@@ -180,14 +185,24 @@ void Altimeter::update()
         prevBaroMode = baroMode;
     }
 
+    
     analogWrite(TFT_BL, instrumentBrightness);
-
     if(prevScreenRotation != screenRotation)
     {
         tft.setRotation(screenRotation);
         prevScreenRotation = screenRotation;
     }
-    drawAll();
+
+    if (screenRotation == 1 || screenRotation == 3)
+    {
+        tft.setViewport(80, 0, 320, 320, false);
+        drawAll();
+    }
+    else if (screenRotation == 0 || screenRotation == 2)
+    {
+        tft.setViewport(0, 80, 320, 320);
+        drawAll();
+    }
 
 }
 
@@ -221,7 +236,10 @@ void Altimeter::drawAll()
 
   altimeterSpr.pushToSprite(&mainSpr, 0, 0, TFT_BLACK);
 
-  mainSpr.pushSprite(80, 0);
+  if (screenRotation == 1 || screenRotation == 3)
+    mainSpr.pushSprite(80, 0);
+  else if (screenRotation == 0 || screenRotation == 2)
+    mainSpr.pushSprite(0, 0);
 
   mainSpr.fillSprite(TFT_BLACK);
   // baroSpr.fillSprite(TFT_BLACK);
@@ -254,12 +272,12 @@ void Altimeter::setBaroMode(int mode)
 
 
 }
-
-void Altimeter::setPowerSaveMode(bool enabled)
+void Altimeter::setPowerSave(bool enabled)
 {
     if(enabled)
     {
         digitalWrite(TFT_BL, LOW);
+        tft.fillScreen(TFT_BLACK);
         powerSaveFlag = true;
     }
     else
@@ -271,6 +289,6 @@ void Altimeter::setPowerSaveMode(bool enabled)
 
 void Altimeter::setScreenRotation(int rotation)
 {
-  if(rotation == 1 || rotation == 3)
+  if(rotation >= 0 || rotation <= 3)
     screenRotation = rotation;
 }

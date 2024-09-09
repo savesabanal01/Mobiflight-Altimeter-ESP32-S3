@@ -39,7 +39,7 @@ private:
     void setBaro(float value);
     void setInstrumentBrightnessRatio(float ratio);
     void setBaroMode(int mode);
-    void setPowerSaveMode(bool enabled);
+    void setPowerSave(bool enabled);
     void setScreenRotation(int rotation);
 
 };
